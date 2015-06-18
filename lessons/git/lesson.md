@@ -16,7 +16,7 @@ workflow too!  Minus the Pull Requests, though.
 ## Checklist: ##
 
 * Config your git
-* Fork the Study Group (via @mbonsma)
+* Fork the Study Group (via @UofTCoders)
 * Clone your fork down into your computer
 * Check the log and status
 * Create a new file (your bio)
@@ -36,7 +36,7 @@ together:
 
 * http://codeasmanuscript.github.io/workshops/lessons/git/cheatsheet/
 
-Then, fork @mbonsma's repository into your own GitHub
+Then, fork @UofTCoders's repository into your own GitHub
 account. Afterwards do these commands:
 
     cd ~/Desktop
@@ -78,7 +78,7 @@ The Pull Request should already be updated after pushing.  I'll accept
 some of the Pull Requests, then you need to update your local and
 forked versions to match the master version:
 
-    git remote add upstream https://github.com/mbonsma/studyGroup.git
+    git remote add upstream https://github.com/UofTCoders/studyGroup.git
     git pull upstream gh-pages
     git push
 
