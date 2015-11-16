@@ -84,8 +84,6 @@
 - name: Alex Tavasoli
   github: atavasoli
 
-<<<<<<< HEAD
-=======
 - name: Lina Tran
   degree: MSc, Physiology
   github: linamnt
@@ -93,7 +91,6 @@
     - Python
     - R
   
->>>>>>> 4282460... Adding Lina Tran
 - name: Eric Zhu
   degree: MSc, Computer Science
   github: ekzhu
