@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="sticky-footer">
+
+  {% include head.html %}
+
+  <body id="page-top" class="index no-header sticky-footer">
+    {% include navbar.html %}
+
+    <div class="content container">
+      <div class="page">
+        <h1 class="page-title">{{ page.title }}</h1>
+
+        <hr>
+
+        {{ content }}
+      </div>
+    </div>
+    {% include footer.html %}
+    {% include js.html %}
+  </body>
+</html>

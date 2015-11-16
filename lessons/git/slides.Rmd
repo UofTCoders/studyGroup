@@ -1,0 +1,39 @@
+---
+title: "Let's git started :)"
+author: "Luke Johnston"
+date: "Sept. 23, 2015"
+output: slidy_presentation
+---
+
+## 
+
+![](http://codeasmanuscript.org/lessons/images/filenamingComic.gif)
+
+## Learning expectations ##
+
+This won't even touch the surface of git... But! Hopefully, you:
+
+* Recognize the power of using version control
+* Know the basic tools to get started using git
+* Where to go for help
+
+## 4 main concepts ##
+
+* **Start repository**: git init, git clone (GitHub)
+* **Check activity**: git status, git log, git diff
+* **Save to history**: git add, git commit
+* **Move through the history**: git checkout
+
+And maybe (if time):
+
+* **Synchronizing with GitHub**: git push, git pull
+
+## Different areas in Git ##
+
+![](https://git-scm.com/book/en/v2/book/01-introduction/images/areas.png)
+
+## Generate these slides using (using R): ##
+
+```{r render, eval = FALSE}
+rmarkdown::render('slides.Rmd')
+```

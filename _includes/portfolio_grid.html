@@ -10,7 +10,7 @@
             <div class="col-lg-12">
               <ul class='events'>
               {% assign isEvent = 0 %}
-              {% for post in site.posts reversed limit:5 %}
+              {% for post in site.posts reversed %}
                 {% capture nowyear %}{{'now' | date: '%Y'}}{% endcapture %}
                 {% capture postyear %}{{post.date | date: '%Y'}}{% endcapture %}
                 {% capture nowday %}{{'now' | date: '%j'}}{% endcapture %}

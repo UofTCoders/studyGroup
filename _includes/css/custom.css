@@ -4,3 +4,43 @@
 .team-member i.fa {
  font-size: 110px;
 }
+/* Ensure body is below navbar */
+body.no-header {
+ padding-top: 100px;
+}
+body.no-header nav.navbar {
+ background-color: #222;
+}
+/* Sticky footer: http://getbootstrap.com/examples/sticky-footer-navbar/ */
+html.sticky-footer {
+ position: relative;
+ min-height: 100%;
+}
+body.sticky-footer {
+ /* Margin bottom by footer height */
+ margin-bottom: 100px;
+}
+body.sticky-footer footer {
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ /* Set the fixed height of the footer here */
+ height: 100px;
+}
+
+.site-avatar {
+  float: left;
+  width: 60px;
+  height: auto;
+  margin-right: 15px;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  img {
+    border-radius: 5px;
+  }
+}

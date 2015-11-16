@@ -1,0 +1,18 @@
+---
+layout: page
+title: 'Lesson Material'
+visible: false
+---
+
+<!-- Blog section -->
+
+<ul>
+  {% assign pages_list = site.pages %}
+  {% for node in pages_list %}
+    {% if node.title != null %}
+      {% if node.visible == true %}
+          <li><a href="{{ site.github.url | replace:'http:','https:' }}{{ node.url }}">{{ node.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}  <!-- page -->
+</ul>

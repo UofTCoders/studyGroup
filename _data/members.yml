@@ -13,6 +13,12 @@
   github: melaniecooke
   interests:
     - Python
+    
+- name: Lindsay Coome
+  degree: PhD, Psychology
+  github: lcoome
+  interests:
+    - R
 
 - name: Andre R Erler
   degree: PhD, Physics
@@ -33,6 +39,11 @@
   interests:
     - C++
     - Fortran90
+  
+- name: Derek Howard
+  github: derekhoward
+  interests:
+    - Python
 
 - name: Lanna S Jin
   degree: PhD, Ecology &amp; Evolutionary Biology

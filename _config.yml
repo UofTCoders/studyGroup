@@ -2,8 +2,8 @@
 #Follow these 2 steps to set up your site.
 
 #Step 1: give your study group a name and a short description:
-title: University of Toronto Study Group
-description: "A study group dedicated to sharing scientific coding knowledge."
+title: University of Toronto Scientific Coders
+description: "We are a group of students and researchers dedicated to learning about and sharing scientific coding techniques and knowledge in an effort to improve scientific research."
 
 #Step 2: press the green 'Commit Changes' button at the bottom of this page.
 
@@ -17,19 +17,19 @@ description: "A study group dedicated to sharing scientific coding knowledge."
 # None of these things need to be changed - but feel free!
 
 titleBackground: "https://s3-us-west-2.amazonaws.com/webmaker-kits/learning%402x.jpg"
-headlineSmall: "Welcome To Our Study Group!"
+headlineSmall: "Welcome To The U of T Coders Group!"
 headlineMain: "Let's Work Together"
+avatar: "img/logos/logo_icon_dark.png"
 
 # Setup Google Calendar
 # Usage:
-# 1. create a new google account
+# 1. create a new google account; set the calendar to 'public'
 # 2. change 'USER' in the example urls below to the username of the google account you made for your calendar
 # 3. set calendar_on: True.
 
 calendar_on: True
 calendar_embed_url: "https://www.google.com/calendar/embed?src=utorontostudygroup@gmail.com"
 calendar_ical_url: "https://www.google.com/calendar/ical/utorontostudygroup@gmail.com/public/basic.ics"
-
 
 #========================================
 # No touching anything below this line :)

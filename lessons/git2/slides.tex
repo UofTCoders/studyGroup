@@ -1,0 +1,339 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,tgadventor}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds,decorations.pathreplacing,decorations.text,fadings,trees}
+
+\useinnertheme{rectangles}
+\usecolortheme[accent=blue]{solarized}
+\setbeamercolor{description item}{fg=solarizedAccent}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+
+% Shell highlighting
+\newcommand{\command}[1]{\textcolor{solarizedAccent}{\$}
+                         \textcolor{solarizedRebase2}{#1}}
+\newcommand{\comment}[1]{\textit{\# #1}}
+\newcommand{\hiRed}[1]{\textcolor{solarizedRed}{#1}}
+\newcommand{\hiGreen}[1]{\textcolor{solarizedGreen}{#1}}
+\newcommand{\hiBlue}[1]{\textcolor{solarizedBlue}{#1}}
+\newcommand{\hiYellow}[1]{\textcolor{solarizedYellow}{#1}}
+
+% DAG commands
+\newcommand\commit[2]{\node[commit] (#1) {};%
+                      \node[clabel] (#1 label) at (#1) {\texttt{#1}: #2};}
+\newcommand\ghost[1]{\coordinate (#1);}
+\newcommand\connect[2]{\path[connections] (#1) to[out=90,in=-90] (#2);}
+\newcommand\gittag[1]{%
+ \begin{tikzpicture}[baseline]
+  \node[fill=solarizedRebase02, rounded corners, inner sep=1pt, anchor=base] {
+    \color{solarizedYellow}\vphantom{|}#1
+   };
+ \end{tikzpicture}%
+}
+\newcommand\branch[1]{%
+ \begin{tikzpicture}[baseline]
+  \node[fill=solarizedRebase02, rounded corners, inner sep=1pt, anchor=base] {
+    \color{solarizedRed}\vphantom{|}#1
+   };
+ \end{tikzpicture}%
+}
+
+% http://tex.stackexchange.com/questions/55806/tikzpicture-in-beamer/55827#55827
+\tikzset{
+  invisible/.style={opacity=0},
+  visible on/.style={alt=#1{}{invisible}},
+  alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}
+  },
+}
+
+\author{U of T Scientific Coders}
+\title{An Intermediate Look at Git + GitHub}
+\institute{University of Toronto}
+\date{October 1, 2015}
+\titlegraphic{%
+ \begin{tikzpicture}[
+    commit/.style={draw, circle, fill=solarizedViolet, inner sep=0pt,
+                   minimum size=5pt},
+    clabel/.style={right, outer sep=1em},
+    connections/.style={draw, solarizedViolet}
+  ]
+  \useasboundingbox (0,1em) rectangle (10.7,6.5em); % Mysteriously chosen to fit...
+  \matrix [column sep={1em,between origins}, row sep=\lineskip,
+           ampersand replacement=\&]%
+  {
+   \commit{fd7a4e4}{\branch{gh-pages} Create 2015-10-08-Coworking4.markd\dots} \& \& \\
+   \commit{c3cb768}{Merge pull request \#41 from mbonsma/gh-pages} \& \& \\
+   \& \commit{e2764b7}{Incorporated PR comments into Biopython/less\dots} \& \\
+   \& \commit{d212bdd}{Merge remote-tracking branch `upstream/gh-p\dots} \& \\
+   \commit{85791b7}{Added start and end time to event post} \& \& \\
+   \& \commit{b83b3e0}{Merge remote-tracking branch `upstream/gh-p\dots} \& \\
+   \commit{0b7d78c}{Create 2015-10-01-MoreObGit.markdown} \& \& \\
+   \commit{c188bb0}{Merge pull request \#48 from lwjohnst86/gh-pages} \& \& \\
+   \ghost{ghost00} \& \ghost{ghost01} \& \\
+  };
+  % Left branch
+  \connect{c3cb768}{fd7a4e4};
+  \connect{85791b7}{c3cb768};
+  \connect{0b7d78c}{85791b7};
+  \connect{c188bb0}{0b7d78c};
+  \connect{ghost00}{c188bb0};
+  % Upper right branch
+  \connect{e2764b7}{c3cb768};
+  \connect{d212bdd}{e2764b7};
+  \connect{85791b7}{d212bdd};
+  % Lower right branch
+  \connect{b83b3e0}{d212bdd};
+  \connect{0b7d78c}{b83b3e0};
+  \connect{ghost01}{b83b3e0};
+  \fill [color=solarizedRebase03, path fading=north] (-1,-1.5) rectangle (16,0);
+ \end{tikzpicture}%
+}
+
+\AtBeginSection[]{\frame{\sectionpage}}
+
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]
+ \titlepage
+\end{frame}
+
+\begin{frame}
+ \frametitle{Outline}
+ \tableofcontents
+\end{frame}
+
+\section{Review}
+
+\begin{frame}
+ \frametitle{Review}
+
+ \begin{itemize}
+  \item Configure your git client (\texttt{git config user.name} + \texttt{user.email})
+  \item Create a git repository (\texttt{git init})
+  \pause
+  \begin{tikzpicture}[%
+    remember picture,
+    show background rectangle,
+    background rectangle/.style={draw, visible on=<2->},
+    visible on=<2->
+   ]
+   \begin{scope}[
+     every node/.style={anchor=west, minimum height=1em,
+                        font={\tiny\ttfamily}, inner sep=2.5pt},
+     every edge/.style={thick},
+     root/.style={},
+     grow via three points={one child at (0.25,-0.75em) and
+                            two children at (0.25,-0.75em) and (0.25,-1.25em)},
+     edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}
+    ]
+    \node[anchor=west, font={\scriptsize}, align=center]
+     at (0,0) (work) {Working\\Directory};
+    \node [root, anchor=north] at (work.south) (work root) {my\_project/}
+     child { node (git folder) {.git/} }
+     child { node (first folder) {foo/} }
+     child { node {bar/} }
+     child { node {baz.txt} }
+     child { node {qux.txt} }
+     child { node (last folder) {\dots} };
+   \end{scope}
+   \node[anchor=north west, font={\scriptsize}, xshift=4em]
+    at (work.north east) (repository) {Repository};
+   \begin{scope}[
+     every node/.style={anchor=west, minimum height=1em,
+                        font={\tiny\ttfamily}, inner sep=2.5pt},
+     every edge/.style={thick},
+     root/.style={},
+     grow via three points={one child at (0.25,-0.75em) and
+                            two children at (0.25,-0.75em) and (0.25,-1.25em)},
+     edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}
+    ]
+    \node[anchor=north, font={\scriptsize}, align=center]
+     at (repository.south) (index) {Index/\\Staging Area};
+    \node<3->[root, anchor=north, align=center]
+     at (index.south) (snapshot) {\color{solarizedAccent} (Snapshot)}
+     child { node {foo/} }
+     child { node {baz.txt} }
+     child { node {\dots} };
+   \end{scope}
+   \begin{scope}[
+     commit/.style={draw, rectangle, rounded corners, fill=solarizedRebase02,
+                    inner sep=1pt, minimum height=0.75em, minimum width=1em,
+                    font={\tiny\sffamily}},
+     connections/.style={draw}
+    ]
+    \node[anchor=west, font={\scriptsize}, align=center, xshift=1em] at (index.east)
+     (history) {History};
+    \matrix at (history.south)
+      [column sep={1em,between origins}, row sep={1em,between origins},
+       ampersand replacement=\&, yshift=-2.5em]%
+    {
+     \node[commit,visible on=<4->] (10) {\color{solarizedAccent} 10}; \\
+     \node[commit] (9) {9}; \\
+     \node[commit] (8) {8}; \\
+     \ghost{7}; \\
+    };
+    \path[connections, visible on=<4->] (9) -- (10);
+    \connect{8}{9};
+    \path[connections, densely dotted] (7) -- (8);
+   \end{scope}
+   \begin{scope}[
+     path/.style={->},
+     label/.style={decorate, decoration={text along path, text align=center,
+                                         text color=solarizedRebase0,
+                                         raise=1pt}}
+    ]
+    \draw[path] (git folder.east) to[out=0,in=180] (repository.west);
+    \draw (index.north west) rectangle (7.south -| history.east);
+    \draw<3->[decorate, decoration={brace, raise=0.75em, aspect=0.45}]
+      (first folder.east) |- (last folder.east) node[near start] (mid selection) {};
+    \draw<3->[path] (mid selection.east) + (0.6em,0) to[out=0,in=180] (snapshot.west);
+    \draw<4->[path] (snapshot.east) to[out=0,in=180] (10.west);
+   \end{scope}
+  \end{tikzpicture}
+  \pause
+  \item Start tracking a file with git (\texttt{git add})
+  \pause
+  \item Commit changes to the history (\texttt{git commit})
+  \pause
+  \item Check what's going on (\texttt{git status})
+  \item Compare a file with the one in the history (\texttt{git diff})
+  \item Look into your history (\texttt{git log})
+ \end{itemize}
+\end{frame}
+
+\section{Viewing History}
+
+\begin{frame}
+ \frametitle{Viewing History}
+
+ Viewing the log allows you to ``see'' history:
+ \begin{itemize}
+  \item \texttt{git log}
+  \pause
+  \item \texttt{git log \alert{<start>..<end>}}
+  \item \texttt{git log \alert{-{}- <file>}}
+  \item \texttt{git log \alert{-{}-oneline}}
+  \item \texttt{git log \alert{-{}-graph}}
+  \item \texttt{git log -{}-graph \alert{-{}-decorate}} \\
+ \end{itemize}
+ \pause
+ \begin{itemize}
+  \item \texttt{git blame <file>}
+ \end{itemize}
+ \pause
+ \begin{itemize}
+  \item \texttt{gitk} + \texttt{gitg} + other viewers
+ \end{itemize}
+\end{frame}
+
+\section{Branching}
+
+\begin{frame}
+ \frametitle{Branches}
+
+ What are branches?
+ \begin{itemize}[<+->]
+  \item Divergent commits (two commits with the same parent) could be
+        considered ``virtual'' branches
+  \item Branches are simply a \alert{named pointer} to a commit
+  \item Branches automatically \emph{move forward} as commits are made
+ \end{itemize}
+ \pause[\thebeamerpauses]
+ Why use them?
+ \pause
+ \begin{itemize}[<+->]
+  \item They're cheap! Just pointers. No heavy changes, e.g., an extra
+        directory in svn.
+  \item To keep experimental work apart
+  \item To separate trials
+  \item To ease collaboration
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Branches}
+
+ Managing branches:
+ \begin{itemize}
+  \item \texttt{git branch <name> [commit]}
+  \item \texttt{git branch -d <name>}
+  \item \texttt{git branch [-l]}
+ \end{itemize}
+
+ \pause
+ Switching branches:
+ \begin{itemize}
+  \item \texttt{git checkout <branch name>}
+  \item \texttt{git checkout -b <branch name> [commit]} --- Create and switch
+        in one go
+ \end{itemize}
+
+ \pause
+ Merging branches:
+ \begin{itemize}
+  \item \texttt{git merge <other branch name>}
+  \item \texttt{git merge \alert{-{}-ff-only} <other branch name>}
+  \item \texttt{git merge \alert{-{}-no-ff} <other branch name>}
+ \end{itemize}
+\end{frame}
+
+\section{Collaborating with Others}
+
+\begin{frame}
+ \frametitle{Clones and Remotes}
+
+ Clones are complete copies of a repository's history (i.e., excluding the
+ index and working directory)
+ \pause
+ \begin{itemize}
+  \item \texttt{git clone <URI>}
+ \end{itemize}
+
+ \pause
+ Remotes are \emph{pointers} to other clones
+ \pause
+ \begin{itemize}
+  \item \texttt{git remote [-v]}
+  \item \texttt{git remote add <name> <URI>}
+  \item \texttt{git remote rm <name>}
+  \item Local branches can \emph{track} remote branches\\
+        \texttt{git branch -u <remote branch> <local branch>}
+ \end{itemize}
+
+ \pause
+ \emph{You} are responsible for syncing
+ \begin{itemize}
+  \item \texttt{git push [<remote>] [<branch>]}
+  \item \texttt{git fetch [<remote>]}
+  \item \texttt{git pull [<remote>]} --- \texttt{fetch} + \texttt{merge}
+ \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+ \vfill
+ \begin{center}
+  \LARGE \color{solarizedAccent} GitHub Example
+ \end{center}
+ \vfill
+\end{frame}
+
+\appendix
+
+\section{Advanced Topics}
+
+\begin{frame}
+ \frametitle{Advanced Topics}
+
+ \begin{itemize}[<+->]
+  \item \texttt{git add \alert{-{}-patch}}
+  \item \texttt{git rebase}
+  \item Ignoring unwanted files
+ \end{itemize}
+\end{frame}
+
+\end{document}

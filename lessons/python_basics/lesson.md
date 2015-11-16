@@ -1,8 +1,15 @@
+---
+layout: page
+title: 'Intro to Python'
+visible: true
+---
+
 # Overview of Python
 
  - **Authors**: Charles Zhu
  - **Research field**: Astronomy & astrophysics
- - **Lesson Topic**: Introduction to Python syntax and functionality
+ - **Lesson topic**: Introduction to Python syntax and functionality
+ - **Lesson content URL**: <https://github.com/UofTCoders/studyGroup/tree/gh-pages/lessons/python_basics>
 
 ## Preface: ##
 
