@@ -95,6 +95,13 @@
 - name: Alex Tavasoli
   github: atavasoli
 
+- name: Lina Tran
+  degree: MSc, Physiology
+  github: linamnt
+  interests:
+    - Python
+    - R
+  
 - name: Eric Zhu
   degree: MSc, Computer Science
   github: ekzhu
