@@ -13,6 +13,12 @@
   github: melaniecooke
   interests:
     - Python
+    
+- name: Lindsay Coome
+  degree: PhD, Psychology
+  github: lcoome
+  interests:
+    - R
 
 - name: Andre R Erler
   degree: PhD, Physics
@@ -89,6 +95,13 @@
 - name: Alex Tavasoli
   github: atavasoli
 
+- name: Lina Tran
+  degree: MSc, Physiology
+  github: linamnt
+  interests:
+    - Python
+    - R
+  
 - name: Eric Zhu
   degree: MSc, Computer Science
   github: ekzhu

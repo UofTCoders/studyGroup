@@ -1,0 +1,23 @@
+Dear SCF Mentoring Subcommittee,
+
+We are writing to express our interest to attend the two-day training course in December 2015 as one group composed of:
+
+Madeleine Bonsma (@mbonsma on GitHub),
+Lindsay Coome (@lcoome on GitHub),
+Lina Tran (@linamnt on Github),
+Sarah Meister (@thesarahmeister on GitHub),
+Elliott Sales de Andrade (@QuLogic on GitHub),
+Ricardo Harripaul (@ricardoharripaul on GitHub),
+Derek Howard (@derekhoward on Github), 
+Dawn Walker (@dcwalk on Github), and
+Erin W Dickie (@edickie on Github).
+
+Madeleine Bonsma is the organizer of a scientific progamming peer learning group at the University of Toronto (University of Toronto Scientific Coders - uoftcoders.github.io) and is on the waitlist for instructor training. Lindsay Coome is a session leader in the University of Toronto Scientific Coders group and attended a Software Carpentry workshop at SickKids Hospital in 2015. She is also on the waitlist for instructor training. Lina Tran is an organizer and member of the University of Toronto Scientific Coders group and attended a Software Carpentry workshop at SickKids Hospital in 2015. Sarah Meister is a session leader in the Scientific Coders group and taught a course on R through Graduate Professional Skills at the University of Toronto. Elliott Sales de Andrade is an organizer and member of the University of Toronto Scientific Coders group. Ricardo Harripaul is a session leader in the Scientific Coders group and a member of the Centre for Addiction and Mental Health (CAMH) Scientific Computing Working Group. Derek Howard is a member of the University of Toronto Scientific Coders group and previously went through SWC training but never completed his last pull request to improve the Python lesson. Dawn Walker is a member of University of Toronto Association for Information Systems (UofT AIS) and attended a Software Carpentry workshop in February 2015 that AIS hosted at the Faculty of Information. She has also taught command line (bash) workshops and organized/volunteered at sessions for open source, Python, and Linux skills. Erin W Dickie is a member of the CAMH Scientific Computing Working Group.
+
+This group includes representatives from three programming user groups based at the University of Toronto St. George campus. Collectively, we are a hub for a diverse group of researchers seeking coding support and peer learning opportunities. The University of Toronto Scientific Coders group will provide ongoing support and practice opportunities for SWC participants after-the-fact, ensuring that concepts learned can be effectively retained. The University of Toronto Association for Information Systems will collaborate to host the upcoming 2016 workshops.
+
+If we are selected for the instructor training we will use a seminar room in the Ontario Institute for Studies in Education (OI 2198 on Dec 7 and OI 8201 on Dec 8). We have confirmed reservations for these rooms. 
+
+We are planning to organize two workshops at the beginning of 2016. One will be Python based and will have Madeleine Bonsma, Lina Tran, Elliott Sales de Andrade, Ricardo Harripaul, Derek Howard, and Dawn Walker as instructors. The second will be R based and will have Lindsay Coome, Sarah Meister, Lina Tran, and Erin Dickie as instructors. For the Python workshop, we will use the same room as used by UofT AIS for the last SWC workshop. The R workshop will be held in a room in OISE booked using the UofT Scientific Coders' status as a recognized campus group. 
+
+Thanks for your consideration.
