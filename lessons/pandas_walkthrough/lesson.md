@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Pandas for data analysis
-visible: false
+visible: True
 ---
 <!-- change visible to true if you want it on the site -->
 
@@ -16,6 +16,6 @@ The lesson was uploaded as a Jupyter notebook.
 
 If you'd like to follow along in IPython Notebook, do the following:
 
-  - Install [Jupyter Notebook](http://jupyter.readthedocs.org/en/latest/install.html)
+  - Install [Jupyter Notebook](https://jupyter.readthedocs.org/en/latest/install.html)
   - Run the notebook by typing `jupyter notebook` into command line.
-  - In the web application that opens, navigate to the folder containing the files you downloaded, and open 'Classes in Python.ipynb' to follow along.
+  - In the web application that opens, navigate to the folder containing the files you downloaded, and open 'UofT-pandas.ipynb' to follow along.
