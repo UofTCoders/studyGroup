@@ -1,21 +1,24 @@
 ---
+always_allow_html: yes
 layout: page
 title: 'Plotting in R: ggplot2'
 visible: false
+tags:
+  - r
+  - intermediate
+output: github_document
+
 ---
 
-# Introduction to ggplot2
+# INTRODUCTION TO GGPLOT2
+* Author: Lindsay Coome
+* Lesson Topic: Plotting in R using ggplot2
+* [Study Materials](https://github.com/UofTCoders/studyGroup/tree/gh-pages/lessons/r/ggplot2)
 
- - **Author**: Sarah Meister
- - **Lesson topic**: Plotting in R using ggplot2
- - **Lesson content URL**: <https://github.com/UofTCoders/studyGroup/tree/gh-pages/lessons/ggplot2>
+## WHAT IS GGPLOT?
+ggplot2 is meant to be an implementation of the Grammar of Graphics, hence gg-plot. The basic notion is that there is a grammar to the composition of graphical components in statistical graphics, and by directly controlling that grammar, you can generate a large set of carefully constructed graphics tailored to your particular needs. Each component is added to the plot as a layer.
 
-### What is ggplot2? ###
-
-ggplot2 is meant to be an implementation of the Grammar of Graphics, hence gg-plot. The basic notion is that there is a grammar to the composition of graphical components in statistical graphics, and by direcly controlling that grammar, you can generate a large set of carefully constructed graphics tailored to your particular needs. Each component is added to the plot as a layer. 
-
-### Components of a ggplot2 plot ###
-
+## COMPONENTS OF A GGPLOT2 PLOT
 Plots convey information through various aspects of their aesthetics. Some aesthetics that plots use are:
 
 * x position
@@ -36,66 +39,114 @@ Some of these geometries have their own particular aesthetics. For instance:
 
 **points**
 
-  * point shape
-  * point size
-  
+* point shape
+* point size
+
 **lines**
 
-  * line type
-  * line weight
-  
+* line type
+* line weight
+
 **bars**
 
-  * y minimum
-  * y maximum
-  * fill color
-  * outline color
-  
+* y minimum
+* y maximum
+* fill color
+* outline color
+
 **text**
 
-  * label value
+* label value
 
-## R code ##
+##LET'S GET STARTED!
 
-```{r}
-
-library(ggplot2)
-
-summary(mpg)
-
-g <- ggplot(mpg, aes(displ, hwy))
-
-g + geom_point()
-
-g + geom_point() + geom_smooth(method="lm")
-
-g + geom_point() + geom_smooth(method="lm") + facet_grid(drv~.)
-
-g + geom_point(color="steelblue", size=4, alpha=1/2)
-
-g + geom_point(aes(color=drv)) + 
-labs(title="Fuel ecomony...", 
-     x= "Engine displ", y="highway milage") + theme_bw(base_family = "Times")
-
-ggplot(mpg, aes(displ)) + geom_histogram(aes(color=drv)) + theme_bw()
-
-library(reshape2)
-library(plyr)
-library(dplyr)
-
-mt <- select(mtcars, c(1,3,4,5,6,7))
-mt2 <- cor(mt)
-mt3 <- melt(mt2)
-ggplot(mt3, aes(x=Var1, y=Var2, fill=value)) + geom_tile()
-
-mtcars %>%
-  select(c(1,3,4,5,6,7)) %>%
-  cor() %>%
-  melt() %>%
-  ggplot(aes(x=Var1, y=Var2, color=value)) + geom_point()
-  
+Here is an example of the base plotting functions in R:
+```{r cars}
+plot(cars)
+hist(cars$speed)
 ```
 
-# Python-ized version (courtesy of [@QuLogic](https://github.com/QuLogic))
+[But ggplot2 plots are prettier...](https://www.google.ca/search?q=ggplot2&client=safari&rls=en&source=lnms&tbm=isch&sa=X&ved=0ahUKEwisuv6V6IvSAhVk0oMKHTNkARkQ_AUICCgB&biw=1279&bih=621#tbm=isch&q=ggplot2+examples)
 
-<script src="https://gist.github.com/QuLogic/6c168deedeab0a7c2c96.js"></script>
+We'll investigate the dataset we're going to use to make some graphs....
+```{r}
+library(ggplot2)
+str(diamonds)
+```
+
+Our first graph?
+```{r}
+ggplot(diamonds, aes(x=cut, y=carat))
+```
+
+We've defined the structure of our graph, but we need to add a "layer" to it in order to define what type of graph it is. Let's make a scatterplot:
+```{r}
+ggplot(diamonds, aes(x=carat, y=price)) + 
+  geom_point()
+```
+
+You can also save the structure of the graph to a variable and then add layers and other attributes to it. Let's do that:
+```{r}
+g <- ggplot(diamonds, aes(x=carat, y=price))
+g + geom_point()
+```
+
+We can add other "layers" of graphs to our first graph. Let's add a trend line to our scatterplot:
+```{r}
+g + geom_point() + geom_smooth() 
+```
+
+We can also "facet" our graphs, which means dividing a plot into subplots based on the values of one or more discrete variables.
+```{r}
+g + geom_point() + geom_smooth() + facet_grid(cut~.)
+```
+
+There are lots of ways to organize your facet. See "faceting" at the bottom of [ggplot cheetsheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf).
+
+Let's say we don't want to facet, but we want to colour the dots depending on the cut of the diamonds:
+```{r}
+ggplot(diamonds, aes(x=carat, y=price, color=cut)) + geom_point()
+```
+
+We can also change some aesthetic features of the graph. Let's get rid of the color aspect of our structure and change the colour and size of the points:
+```{r}
+ggplot(diamonds, aes(x=carat, y=price)) + geom_point(color="steelblue", size=4)
+```
+
+Let's look at how to change the theme and labels:
+
+```{r}
+g + geom_point() +
+  ylab("Diamond Price") +
+  xlab("Carat") +
+  ggtitle("Diamond Price by Weight") +
+  theme_bw()
+```
+
+What about a bar plot? Let's find out how many diamonds of each cut are in the dataset.
+```{r}
+ggplot(diamonds, aes(cut)) + geom_bar()
+```
+
+What about making interactive graphs in R?
+There is a package called plotly that lets us make our ggplot2 graphs interactive:
+```{r}
+library(plotly)
+g <- ggplot(diamonds, aes(cut)) + geom_bar()
+p=ggplotly(g)
+p
+```
+
+Finally, here is qplot, a way of making super quick scatterplots in R.
+```{r}
+qplot(carat, price, data = diamonds)
+```
+
+## MORE RESOURCES ON GGPLOT2
+[ggplot2 documentation](http://had.co.nz/ggplot2/)
+
+[Book by Hadley Wickham](https://www.amazon.com/ggplot2-Elegant-Graphics-Data-Analysis/dp/0387981403)
+
+[ggplot2 cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+
+[r graph gallery for inspiration (not just limited to ggplot2 graphs)](http://www.r-graph-gallery.com/all-graphs/)
