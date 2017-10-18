@@ -1,0 +1,65 @@
+---
+title: "Introduction to Machine Learning"
+---
+Section: Linear regression
+
+
+
+```{r}
+rm(list = ls())
+#install.packages("lattice")
+library('lattice')
+
+alligator = data.frame(lnLength = c(3.87, 3.61, 4.33, 3.43, 3.81, 3.83, 3.46, 3.76,
+    3.50, 3.58, 4.19, 3.78, 3.71, 3.73, 3.78),
+  lnWeight = c(4.87, 3.93, 6.46, 3.33, 4.38, 4.70, 3.50, 4.50,
+    3.58, 3.64, 5.90, 4.43, 4.38, 4.42, 4.25))
+
+# ### Plot the chart.
+# xyplot(lnWeight ~ lnLength, data = alligator,
+#   xlab = "Snout vent length (inches) on log scale",
+#   ylab = "Weight (pounds) on log scale",
+#   main = "Alligators in Central Florida")
+
+# Plot the chart.
+plot(alligator$lnWeight,alligator$lnLength,col = "blue",xlab = "Snout vent length (inches) on log scale",
+  ylab = "Weight (pounds) on log scale",
+  main = "Alligators in Central Florida")
+
+
+
+```
+will create my linear regresion and will look at results
+```{r}
+relation = lm(lnLength ~ lnWeight, data = alligator)
+print(summary(relation))
+```
+
+```{r}
+# Plot the chart with lm.
+plot(alligator$lnWeight,alligator$lnLength,col = "blue",main = "Height & Weight Regression",
+abline(lm(alligator$lnLength ~ alligator$lnWeight),col = 'red'),xlab = "Weight in Kg",ylab = "Height in cm")
+
+```
+```{r}
+# Find weight of a alligat with weight of 5.5.
+a <- data.frame(lnWeight = 5.5)
+result <-  predict(relation,a)
+print(result)
+
+```
+
+```{r}
+library('ggplot2')
+end<-ggplot(alligator,aes(lnWeight,lnLength))+geom_point()
+end
+end<-end + geom_smooth(method = 'lm',se=FALSE)+geom_vline(xintercept = 5.5)
+end
+end +geom_hline(yintercept = 4.06312,color = 'red')
+```
+```{r}
+end<-ggplot(alligator,aes(lnWeight,lnLength))+geom_point()
+end+geom_smooth()
+```
+
+

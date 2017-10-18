@@ -1,0 +1,117 @@
+---
+title: Unsupervised Learning
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list = ls())
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r iris}
+library(datasets)
+head(iris)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+first<-plot(iris)
+
+library(ggplot2)
+second<-ggplot(iris,aes(Petal.Width,Petal.Length))+geom_point()
+```
+
+We can do the same graph putting color to different  Species of flower
+
+```{r}
+ggplot(iris, aes(Petal.Length, Petal.Width, color = Species)) + geom_point()
+```
+```
+
+```
+```{r}
+set.seed(20)
+irisCluster <- kmeans(iris[, 3:4], 3, nstart = 20)
+irisCluster
+```
+we can see in a table how our data was clustered 
+```{r}
+table(irisCluster$cluster, iris$Species)
+```
+Once we have this information we can plot the information
+```{r}
+irisCluster$cluster <- as.factor(irisCluster$cluster)
+ggplot(iris, aes(Petal.Length, Petal.Width, color = irisCluster$cluster)) + geom_point()
+```
+Cars example
+```{r}
+cars <- mtcars
+cars$cyl <- factor(cars$cyl, labels = 
+                     c('Four cylinder', 'Six cylinder', 'Eight cylinder'))
+summary(cars)
+str(cars)
+```
+
+```{r}
+features <- c('wt', 'qsec')
+n_clusters <- 3
+car_clusters <- kmeans(cars[, features], n_clusters, nstart = 30)
+```
+
+```{r}
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+```{r}
+cars$cluster <- factor(car_clusters$cluster)
+
+centroids <- data.frame(cluster = factor(seq(1:n_clusters)),
+                        wt = car_clusters$centers[,'wt'],
+                        qsec = car_clusters$centers[,'qsec'])
+```
+
+```{r}
+print(table(cars$cluster, cars$cyl))
+```
+```{r}
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() + 
+  facet_wrap(~class)
+```
+
+```{r}
+g <- ggplot() + 
+  geom_point(data = cars, 
+             aes(x = wt, 
+                 y = qsec,
+                 color = cluster),
+            size = 3) +
+  geom_text(data = cars,
+            aes(x = wt,
+                y = qsec,
+                label = row.names(cars),
+                color = cluster),
+            nudge_y = .2,
+            check_overlap = TRUE) +
+  geom_point(data = centroids,
+             mapping = aes(x = wt,
+                           y = qsec,
+                           color = cluster),
+             size = 20,
+             pch = 13) 
+
+print(g)
+```
+
