@@ -1,51 +1,24 @@
   # Key is the part of the filename in _posts/
-- key: intro-python
+- key: clustering-r
   # Title of event that will show up as the GH Issue title
-  title: "Introduction to Python"
+  title: "Clustering with R"
   # Explanation of event as a paragraph form
   description: >
-    A brief introduction to Python for beginners.
+    An introduction to clustering methods with R.
   # Date of the event in YYYY-MM-DD format
-  date: 2021-10-06
+  date: 2022-02-09
   # Start and end time for event in 24 hour HH:MM format
   start_time: "18:00"
   end_time: "19:00"
   # Where the event will take place
   location: UofT Coders Discord server
   # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/304"
+  location_url: "https://github.com/UofTCoders/Events/issues/312"
   # Packages to install, a space separating each package
   # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
   packages: ""
   youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: Python
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: code-along
-
-  # Key is the part of the filename in _posts/
-- key: intro-r
-  # Title of event that will show up as the GH Issue title
-  title: "Introduction to R"
-  # Explanation of event as a paragraph form
-  description: >
-    A brief introduction to R for beginners.
-  # Date of the event in YYYY-MM-DD format
-  date: 2021-10-13
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "18:00"
-  end_time: "19:00"
-  # Where the event will take place
-  location: UofT Coders Discord server
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/305"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Beginner
+  skill_level: Intermediate
   # Beginner Intermediate Advanced
   # R or Python
   program_language: R
@@ -53,157 +26,79 @@
   gh_labels: code-along
 
   # Key is the part of the filename in _posts/
-- key: intro-git
+- key: supervised-learning-r
   # Title of event that will show up as the GH Issue title
-  title: "Introduction to Git"
+  title: "Supervised learning with R"
   # Explanation of event as a paragraph form
   description: >
-    A brief introduction to version control with Git for beginners.
+    A walkthrough of a supervised learning workflow in R.
   # Date of the event in YYYY-MM-DD format
-  date: 2021-10-20
+  date: 2022-03-02
   # Start and end time for event in 24 hour HH:MM format
   start_time: "18:00"
   end_time: "19:00"
   # Where the event will take place
   location: UofT Coders Discord server
   # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/306"
+  location_url: "https://github.com/UofTCoders/Events/issues/313"
   # Packages to install, a space separating each package
   # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
   packages: ""
   youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: Any
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: code-along
-
-- key: r-data-visualization
-  # Title of event that will show up as the GH Issue title
-  title: "R: Data visualization with ggplot2"
-  # Explanation of event as a paragraph form
-  description: >
-    A beginner-oriented overview of plotting in R with ggplot2.
-  # Date of the event in YYYY-MM-DD format
-  date: 2021-10-27
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "18:00"
-  end_time: "19:00"
-  # Where the event will take place
-  location: UofT Coders Discord server
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/307"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: "ggplot2 dplyr"
-  youtube_link: ""
-  skill_level: Beginner
+  skill_level: Intermediate
   # Beginner Intermediate Advanced
   # R or Python
   program_language: R
   # Only one label that will be put into the GitHub Issue
   gh_labels: code-along
 
-- key: python-scikit-learn
-  # Title of event that will show up as the GH Issue title
-  title: "Python: Machine learning with scikit-learn"
-  # Explanation of event as a paragraph form
-  description: >
-    An introduction to using scikit-learn in Python.
-  # Date of the event in YYYY-MM-DD format
-  date: 2021-11-03
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "18:00"
-  end_time: "19:00"
-  # Where the event will take place
-  location: UofT Coders Discord server
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/308"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: "scikit-learn"
-  youtube_link: ""
-  skill_level: Intermediate
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: Python
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: code-along
-
   # Key is the part of the filename in _posts/
-- key: pandoc-markdown
+- key: r-tidyverse-functions
   # Title of event that will show up as the GH Issue title
-  title: "Pandoc and Markdown"
+  title: "R: Writing functions with the tidyverse"
   # Explanation of event as a paragraph form
   description: >
-    An introduction to preparing documents with Pandoc and Markdown.
+    An exploration of writing functions with tidyverse syntax in R.
   # Date of the event in YYYY-MM-DD format
-  date: 2021-11-17
+  date: 2022-03-16
   # Start and end time for event in 24 hour HH:MM format
   start_time: "18:00"
   end_time: "19:00"
   # Where the event will take place
   location: UofT Coders Discord server
   # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/309"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: "pandoc"
-  youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: None
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: code-along
-
-- key: lightning-demos
-  # Title of event that will show up as the GH Issue title
-  title: "Lightning demos"
-  # Explanation of event as a paragraph form
-  description: >
-    Short coding demos - anyone is welcome to present!
-  # Date of the event in YYYY-MM-DD format
-  date: 2021-11-24
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "18:00"
-  end_time: "19:00"
-  # Where the event will take place
-  location: UofT Coders Discord server
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/310"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: Any
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: lightning-demos
-
-- key: r-blogdown
-  # Title of event that will show up as the GH Issue title
-  title: "Creating websites with RStudio and blogdown"
-  # Explanation of event as a paragraph form
-  description: >
-    An overview of how to create personal and professional websites using blogdown in RStudio.
-  # Date of the event in YYYY-MM-DD format
-  date: 2021-12-01
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "18:00"
-  end_time: "19:00"
-  # Where the event will take place
-  location: UofT Coders Discord server
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/311"
+  location_url: "https://github.com/UofTCoders/Events/issues/314"
   # Packages to install, a space separating each package
   # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
   packages: ""
   youtube_link: ""
   skill_level: Intermediate
+  # Beginner Intermediate Advanced
+  # R or Python
+  program_language: R
+  # Only one label that will be put into the GitHub Issue
+  gh_labels: code-along
+
+- key: epidemic-modelling
+  # Title of event that will show up as the GH Issue title
+  title: "Epidemic modelling"
+  # Explanation of event as a paragraph form
+  description: >
+    A brief overview on modelling epidemics with code.
+  # Date of the event in YYYY-MM-DD format
+  date: 2022-03-30
+  # Start and end time for event in 24 hour HH:MM format
+  start_time: "18:00"
+  end_time: "19:00"
+  # Where the event will take place
+  location: UofT Coders Discord server
+  # The URL for the location
+  location_url: "https://github.com/UofTCoders/Events/issues/315"
+  # Packages to install, a space separating each package
+  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
+  packages: ""
+  youtube_link: ""
+  skill_level: Advanced
   # Beginner Intermediate Advanced
   # R or Python
   program_language: R
