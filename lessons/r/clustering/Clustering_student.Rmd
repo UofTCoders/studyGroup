@@ -1,0 +1,177 @@
+---
+title: "Clustering_student"
+author: "Tara"
+date: "2/9/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Introduction
+
+Today we will learn two techniques that we can use to explore our data and find patterns in our dataset. Clustering analysis is a type of unsupervised machine learning that we use to find patterns or groupings in the data.
+
+The two methods we are learning are hierarchical agglomerative clustering and k-means clustering. The main difference between these two methods is that with hierarchical clustering, we choose the number of clusters we want a posteriori (or after we conduct the analysis), for k-means clustering, we determine the number of clusters we want a priori (prior to the anlalysis). In addition to the choice of the two clustering methods, there are a few methodological decisions we can make that will affect our results, we will dicuss some of these today. 
+
+##Setting up the data and preprocessing
+```{r}
+#Load in a dataset that is already in R
+
+#Use the help function to learn about the dataset
+
+#What types of variables do you see? Which ones do you find interesting? we can conduct clustering analysis on a subset of the variables or on the entire dataset because we have numeric (including two binary) variables
+```
+
+```{r}
+#preprocessing the data
+#1 check for missing values
+
+#this data set doesn't have any missing values so we can proceed with our analysis
+#Normalization and Scaling, chose either: 
+  #Normalize function from library(BBmisc)
+  #install.packages("BBmisc")
+ 
+  #scale the data using scale()
+
+```
+
+
+##Hierarchical Agglomerative Clustering
+For hierarchical agglomerative clustering begins with each observation in a distinct (singleton) cluster, and successively merges clusters together until a stopping criterion is satisfied. This approach can be visualized as a dendroagram, a tree-like diagram, showing how pairs of observations are fused together. 
+
+There are three different method choices that will affect the way our tree looks: 
+  (1) distance metric. this is the calculation that determines how similar the pairs are to eachother. 
+  (2) different algorithms for how to etermine how close pairs of observations are to eachother. This will give us different shapes of dendrogrmas. 
+
+```{r}
+#Step 1. Create the distance matrix
+  #using Euclidean distance, this is most common for data that has continuous numerical values
+  #what other methods are there?
+
+  #we can also look at the maximum distance, manhattan distance, canberra, binari, and minkowski. Let's also try the maximum distsance, create another distance matrix adn change the method agreemeent to "maximum"
+```
+
+```{r}
+#Step 2. Plot the clustering algorithms
+#Run the code for how many clusters does it look like there are in each dendrogram?
+#complete method
+#average method
+#single method
+#ward.D2
+
+#which method gives the most balanced?
+
+#try the exercise with the dist_Max matrix
+```
+
+```{r}
+#Step 3. Choosing the number of clusters Storing the Cluster ID for each observation
+
+#using the call bellow, we are taking our clustering and "cutting" the tree into four clusters. The call will return a vector where each observation is assigned to a cluster.
+
+
+#we can append this vector to a copy of the original dataframe to interpret the clusters
+
+```
+
+```{r}
+#Step. 4 Interpretation
+#how many cars are in each cluster?
+
+#let's summarize by the groups of clusters
+  #need dplyr package
+
+
+#compare the mean mpg between clusters
+
+
+#on your own compare another variable mean between clusters
+
+#visualize the clusters 
+
+
+```
+
+
+##Kmeans Clustering
+K= the number of centres (the number of clusters that we specify apriori).
+K-means aims to divide data into K groups (clusters). This involves finding K centroids. Centroids are invented or existing points that represent the centers of the clusters. In K-means clustering the aim is to indetify K number of centroids and allocate every object to the nearest cluster.
+
+The algorithm for K-means is as follows:
+
+1. Place K points into the object data space. These points represent the initial group of centroids,
+
+2. Assign each data point to the closest centroid, based on Euclidean distance.
+
+3. Recalculate the positions of the K centroids. This is done by taking the mean of all data points assigned to that centroid’s cluster.
+
+4. Repeats steps 2 and 3 until the posistions of the centroids no longer change and the sum of distances of individual units from centroids is as small as possible.
+
+Here is a pipeline for conducting K-Means analysis. 
+
+Step 1: Preprocessing (scaling/normalization)
+Step 2: Figure out the optimal K-value
+Step 3: Run KMeans algorithm
+Step 4: Interpret
+
+
+###Step 2
+```{r}
+##Step 2: Figure out the optimal K-value. 
+#Different methodological approach: trial and error, choose a priori based on theoretical knowledge, choose based on the hierarchical agglomerative clustering result, or use an numerical approach: elbow plot, gap statistic, silohuette.
+#we can use these packages to do all three of these numerical approaches
+#install.packages("factoextra")
+#install.packages("NbClust")
+
+#elbow method
+
+
+#silohuette
+
+
+#gap statistic, 
+
+
+```
+
+##Step 3: Run KMeans algorithm
+```{r}
+#set the seed for the analysis, for reproducibility
+#run the algorithm to start the clusters
+#try to look at what the results are in the kclust object
+
+```
+
+###Step 4: Interpret
+
+```{r}
+#save the scaled data as a dataframe
+#create a new column as of the clustering labels 
+#now you group by the clusters, run stats or visualize 
+```
+
+
+##Heatmaps and other visualization methods (time permitting)
+
+```{r}
+#the factoextra package has many helpful functions for computing cluster analyses and visualizing them
+#another way to visualize clusters, helpful package 
+#note that the dimensions are created using Principal components analysis first
+fviz_cluster(kmeans(dfScaled, centers = 2), geom = "text", data = dfScaled)
+```
+
+##Heatmaps
+
+##Notes and other helpful resources: 
+PAM (Partitioning around mediods) works similar to kmeans but, uses a mediod (median) instead of the mean to create clusters. Kmeans uses the centroid, which is an artificial point, while PAM uses the mediod (a real point). 
+
+Here is a helpful textbook to learn more about the theory of these clustering techniques and applying unsupervised and supervised machine learning techniques in R:
+
+James, Witten, D., Hastie, T., & Tibshirani, R. (2013). An introduction to statistical learning: With applications in R (Vol. 103). Springer. https://doi.org/10.1007/978-1-4614-7138-7
+
+This book is available for free from the UofT library at
+https://librarysearch.library.utoronto.ca/permalink/01UTORONTO_INST/fedca1/cdi_askewsholts_vlebooks_9781461471387
+
+
