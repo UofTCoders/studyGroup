@@ -3,8 +3,7 @@
   # Title of event that will show up as the GH Issue title
   title: "Clustering with R"
   # Explanation of event as a paragraph form
-  description: >
-    An introduction to clustering methods with R.
+  description: "An introduction to clustering methods with R."
   # Date of the event in YYYY-MM-DD format
   date: 2022-02-09
   # Start and end time for event in 24 hour HH:MM format
@@ -30,8 +29,7 @@
   # Title of event that will show up as the GH Issue title
   title: "Supervised learning with R"
   # Explanation of event as a paragraph form
-  description: >
-    A walkthrough of a supervised learning workflow in R.
+  description: "A walkthrough of a supervised learning workflow in R."
   # Date of the event in YYYY-MM-DD format
   date: 2022-03-02
   # Start and end time for event in 24 hour HH:MM format
@@ -57,8 +55,7 @@
   # Title of event that will show up as the GH Issue title
   title: "R: Writing functions with the tidyverse"
   # Explanation of event as a paragraph form
-  description: >
-    An exploration of writing functions with tidyverse syntax in R.
+  description: "An exploration of writing functions with tidyverse syntax in R."
   # Date of the event in YYYY-MM-DD format
   date: 2022-03-16
   # Start and end time for event in 24 hour HH:MM format
@@ -83,8 +80,7 @@
   # Title of event that will show up as the GH Issue title
   title: "Epidemic modelling"
   # Explanation of event as a paragraph form
-  description: >
-    A brief overview on modelling epidemics with code.
+  description: "A brief overview on modelling epidemics with code."
   # Date of the event in YYYY-MM-DD format
   date: 2022-03-30
   # Start and end time for event in 24 hour HH:MM format
