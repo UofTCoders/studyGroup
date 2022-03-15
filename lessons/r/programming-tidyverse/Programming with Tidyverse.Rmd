@@ -1,7 +1,7 @@
 ---
 title: "Programming with Tidyverse"
 author: "Margot Lautens"
-date: "09/11/2020"
+date: "15/03/2022"
 output: html_document
 ---
 
@@ -89,7 +89,7 @@ return(normalizedDiamonds)
 
 diamondsFunction("E",cut,cut)
 ```
-Now you should have a working function! If you want to allow for the possibility of several varaibles to be used, as is the case with diamondsVar1, instead of embracing we'll use "all_of".
+Now you should have a working function! If you want to allow for the possibility of several varaibles to be used, as is the case with diamondsVar1, instead of embracing we'll use `all_of`.
 
 ```{r}
 #TIDYING IN A FUNCTION, ATTEMPT 3#
@@ -108,13 +108,13 @@ return(normalizedDiamonds)
 vars <- c("cut","clarity")
 diamondsFunction("E",vars,cut)
 ```
-You'll have gotten an error. The problem is that group_by is an action verb and not a selection verb so it needs a bit of help understanding inputs like all_of. Use group_by_at instead to fix the problem.
+You'll have gotten an error. The problem is that `group_by` is an action verb and not a selection verb so it needs a bit of help understanding inputs like all_of. Use `across` in addition to `all_of` instead to fix the problem.
 ```{r}
 #TIDYING IN A FUNCTION, ATTEMPT 4#
 diamondsFunction <- function(diamondColor, diamondVar1,diamondVar2){
   normalizedDiamonds <- diamonds%>%
     filter(color==diamondColor)%>%
-    group_by_at(all_of(diamondVar1))%>%
+    group_by(across(all_of(diamondVar1)))%>%
     mutate(normalizedPrice=(price-mean(price))/sd(price))
 
   diamondPlot <- ggplot(normalizedDiamonds,
