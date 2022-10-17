@@ -210,7 +210,7 @@ create_new_posts_with_content <- function(events) {
             title: "{title}"
             text: "{description}"
             location: "{location}"
-            link: "{url}"
+            link: "{location_url}"
             date: "{as.Date(date)}"
             startTime: "{start_time}"
             endTime: "{end_time}"
@@ -224,6 +224,24 @@ create_new_posts_with_content <- function(events) {
     usethis::ui_done("Markdown posts created in _posts/ folder.")
     return(invisible())
 }
+
+new_sessions <- new_sessions %>%
+    add_row(
+        key = 'co-working',
+        title = 'Weekly co-working',
+        description = 'An informal co-working session - come hang out with us while
+        working on code or whatever else you want to get done.',
+        date = 'Every Thursday from Jan 14 to Mar 18',
+        start_time = '13:00',
+        end_time = '14:00',
+        location = 'Zoom',
+        location_url = 'https://github.com/UofTCoders/Events/issues/302',
+        packages = '',
+        youtube_link = '',
+        skill_level = '',
+        program_language = 'Any',
+        gh_labels = 'co-working',
+        location_string = 'Zoom')
 
 create_new_posts_with_content(new_sessions)
 create_new_posts_with_content(new_coffee_code)
