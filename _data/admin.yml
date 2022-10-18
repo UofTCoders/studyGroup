@@ -7,29 +7,23 @@
     - Python
     - LaTeX
 
-- name: Frances Wong
-  position: Special Events Coordinator, Marketing Coordinator
-  degree: Faculty, Biology
-  github: FrancesWong
-  interests:
-    - R
-    - Git
-    - Markdown
-
-- name: Haidy Giratallah
-  position: Peer Mentorship Coordinator
-  degree: PhD, Pharmacology
-  github: HaidyGiratallah
-  interests:
-    - Python
-
 - name: Margot Lautens
-  position: Admin
+  position: Co-working Coordinator
   degree: PhD, Molecular Genetics
   github: margot-l
   interests:
     - R
     - Python
+
+- name: Sophie Breitbart
+  position: Co-working Coordinator
+  degree: PhD, Ecology and Evolutionary Biology
+  github: sbreitbart
+  interests:
+    - R
+    - Git
+    - Markdown
+    - Visualization
 
 - name: Elliott Sales de Andrade
   position: Technical Admin
@@ -40,14 +34,6 @@
     - Python
     - Visualization
 
-- name: Amin Banihashemi
-  position: Treasurer
-  degree: PhD, IMS
-  github: ab2347
-  interests:
-    - Python
-    - R
-
 - name: Vicki Zhang
   position: Admin
   degree: PhD, Ecology and Evolutionary Biology
@@ -56,10 +42,23 @@
     - R
     - Python
 
-- name: Tara Henechowicz
-  position: Peer Mentorship Coordinator
-  degree: PhD, Neuroscience
-  github: tarahenechowicz
+- name: Madeleine Oman
+  position: Treasurer
+  degree: PhD, Ecology and Evolutionary Biology
+  github: MadeleineOman
+  interests:
+    - Python
+    - R
+    - Git
+    - Bash
+    - Bioinformatic workflows
+    - Machine learning
+
+- name: Yeshoda Harry-Paul
+  position: Marketing Coordinator
+  degree: MSc, Cell and Systems Biology
+  github: YeshodaHP
   interests:
     - R
     - Python
+    - Bash

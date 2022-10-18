@@ -31,6 +31,34 @@
   degree: Molecular Genetics
   github: nsahin
 
+- name: Frances Wong
+  degree: Faculty, Biology
+  github: FrancesWong
+  interests:
+    - R
+    - Git
+    - Markdown
+
+- name: Haidy Giratallah
+  degree: PhD, Pharmacology
+  github: HaidyGiratallah
+  interests:
+    - Python
+
+- name: Amin Banihashemi
+  degree: PhD, IMS
+  github: ab2347
+  interests:
+    - Python
+    - R
+
+- name: Tara Henechowicz
+  degree: PhD, Neuroscience
+  github: tarahenechowicz
+  interests:
+    - R
+    - Python
+
 - name: Kathy Chung
   degree: Digital Humanities
   github: chungkky
