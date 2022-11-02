@@ -36,7 +36,7 @@
   start_time: "18:00"
   end_time: "19:00"
   # Where the event will take place
-  location: University of Toronto Mississauga (Room TBA)
+  location: William G. Davis Building Room 3129, University of Toronto Mississauga
   # The URL for the location
   location_url: "https://github.com/UofTCoders/Events/issues/317"
   # Packages to install, a space separating each package
