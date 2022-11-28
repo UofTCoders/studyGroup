@@ -14,7 +14,7 @@ tags:
 
 # Preface
 
-This lesson is an introduction to making web applications. A little HTML and CSS are covered as base-level knowledge, but the focus should be on the Document Object Model (DOM) and JavaScript.
+This lesson is an introduction to making web applications. A little [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://www.scaler.com/topics/css/) are covered as base-level knowledge, but the focus should be on the Document Object Model (DOM) and JavaScript.
 
 The actual lesson contents are in [`contents.md`](../contents/index.html). 
 Part of the lesson is a demo app that reads `contents.md` and makes a slide presentation (found [*here*](../slides.html)). This app is left in an intentionally poorly designed state to demonstrate concepts like scoping. Comments are littered throughout for a novice reader.
