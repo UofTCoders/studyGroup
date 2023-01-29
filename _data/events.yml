@@ -1,18 +1,70 @@
   # Key is the part of the filename in _posts/
-- key: python-pandas
+- key: py-data-vis
   # Title of event that will show up as the GH Issue title
-  title: "Python: Pandas"
+  title: "Data visualization in Python"
   # Explanation of event as a paragraph form
-  description: "An introduction to working with data frames in Python using Pandas."
+  description: "An introduction to exploring and visualizing your data in Python."
   # Date of the event in YYYY-MM-DD format
-  date: 2022-10-19
+  date: 2023-02-01
   # Start and end time for event in 24 hour HH:MM format
   start_time: "18:00"
   end_time: "19:00"
   # Where the event will take place
-  location: MADLab, Room B112 Gerstein Library
+  location: Discord
   # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/316"
+  location_url: "https://github.com/UofTCoders/Events/issues/328"
+  # Packages to install, a space separating each package
+  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
+  packages: ""
+  youtube_link: ""
+  skill_level: Beginner
+  # Beginner Intermediate Advanced
+  # R or Python
+  program_language: Python
+  # Only one label that will be put into the GitHub Issue
+  gh_labels: code-along
+
+  # Key is the part of the filename in _posts/
+- key: intro-bash
+  # Title of event that will show up as the GH Issue title
+  title: "Introduction to Bash"
+  # Explanation of event as a paragraph form
+  description: "A brief overview of working at the command line in Unix environments."
+  # Date of the event in YYYY-MM-DD format
+  date: 2023-02-15
+  # Start and end time for event in 24 hour HH:MM format
+  start_time: "18:00"
+  end_time: "19:00"
+  # Where the event will take place
+  location: Discord
+  # The URL for the location
+  location_url: "https://github.com/UofTCoders/Events/issues/329"
+  # Packages to install, a space separating each package
+  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
+  packages: ""
+  youtube_link: ""
+  skill_level: Beginner
+  # Beginner Intermediate Advanced
+  # R or Python
+  program_language: Bash
+  # Only one label that will be put into the GitHub Issue
+  gh_labels: code-along
+
+  # Key is the part of the filename in _posts/
+- key: python-numpy-pandas
+  # Title of event that will show up as the GH Issue title
+  title: "Python: Data processing with numpy and pandas"
+  # Explanation of event as a paragraph form
+  description: "A code-along demonstrating two popular libraries for data processing in Python."
+  # Date of the event in YYYY-MM-DD format
+  date: 2023-03-01
+  # Start and end time for event in 24 hour HH:MM format
+  start_time: "18:00"
+  end_time: "19:00"
+  # Where the event will take place
+  location: TBA in-person + Discord
+  # The URL for the location
+  location_url: "https://github.com/UofTCoders/Events/issues/330"
   # Packages to install, a space separating each package
   # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
   packages: ""
@@ -25,72 +77,20 @@
   gh_labels: code-along
 
   # Key is the part of the filename in _posts/
-- key: r-data-viz
+- key: python-intro-ml
   # Title of event that will show up as the GH Issue title
-  title: "Data visualization with R"
+  title: "Python: Intro to machine learning"
   # Explanation of event as a paragraph form
-  description: "A crash course in making plots in R using the ggplot2 library."
-  # Date of the event in YYYY-MM-DD format
-  date: 2022-11-02
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "18:00"
-  end_time: "19:00"
-  # Where the event will take place
-  location: William G. Davis Building Room 3129, University of Toronto Mississauga
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/317"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Intermediate
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: R
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: code-along
-
-  # Key is the part of the filename in _posts/
-- key: r-sql
-  # Title of event that will show up as the GH Issue title
-  title: "SQL with R"
-  # Explanation of event as a paragraph form
-  description: "A lesson covering working with SQL databases entirely using R."
-  # Date of the event in YYYY-MM-DD format
-  date: 2022-11-16
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "18:00"
-  end_time: "19:00"
-  # Where the event will take place
-  location: MADLab, Room B112, Gerstein Library
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/318"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Intermediate
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: R
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: code-along
-
-  # Key is the part of the filename in _posts/
-- key: r-functions-tidyverse
-  # Title of event that will show up as the GH Issue title
-  title: "R: Writing functions with the tidyverse"
-  # Explanation of event as a paragraph form
-  description: "A lesson covering how to write flexible functions using the tidyverse in R."
+  description: "A tutorial covering basic ML topics in Python."
   # Date of the event in YYYY-MM-DD format
   date: 2022-11-30
   # Start and end time for event in 24 hour HH:MM format
   start_time: "18:00"
   end_time: "19:00"
   # Where the event will take place
-  location: MADLab, Room B112, Gerstein Library
+  location: TBA in-person + Discord
   # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/319"
+  location_url: "https://github.com/UofTCoders/Events/issues/331"
   # Packages to install, a space separating each package
   # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
   packages: ""
@@ -98,185 +98,7 @@
   skill_level: Intermediate
   # Beginner Intermediate Advanced
   # R or Python
-  program_language: R
+  program_language: Python
   # Only one label that will be put into the GitHub Issue
   gh_labels: code-along
 
-  # Key is the part of the filename in _posts/
-- key: co-working
-  # Title of event that will show up as the GH Issue title
-  title: "Co-working (UTSG + online)"
-  # Explanation of event as a paragraph form
-  description: "A friendly co-working session. Bring yourself and something to work on!"
-  # Date of the event in YYYY-MM-DD format
-  date: 2022-10-19
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "15:00"
-  end_time: "17:00"
-  # Where the event will take place
-  location: MADLab, Room B112, Gerstein Library
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/321"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: NA
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: co-working
-
-  # Key is the part of the filename in _posts/
-- key: co-working
-  # Title of event that will show up as the GH Issue title
-  title: "Co-working (UTM + online)"
-  # Explanation of event as a paragraph form
-  description: "A friendly co-working session. Bring yourself and something to work on!"
-  # Date of the event in YYYY-MM-DD format
-  date: 2022-10-28
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "10:00"
-  end_time: "12:00"
-  # Where the event will take place
-  location: Graduate Lounge, William G. Davis Building
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/322"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: NA
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: co-working
-
-- key: co-working
-  # Title of event that will show up as the GH Issue title
-  title: "Co-working (UTSG + online)"
-  # Explanation of event as a paragraph form
-  description: "A friendly co-working session. Bring yourself and something to work on!"
-  # Date of the event in YYYY-MM-DD format
-  date: 2022-11-02
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "15:00"
-  end_time: "17:00"
-  # Where the event will take place
-  location: MADLab, Room B112, Gerstein Library
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/323"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: NA
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: co-working
-
-  # Key is the part of the filename in _posts/
-- key: co-working
-  # Title of event that will show up as the GH Issue title
-  title: "Co-working (UTM + online)"
-  # Explanation of event as a paragraph form
-  description: "A friendly co-working session. Bring yourself and something to work on!"
-  # Date of the event in YYYY-MM-DD format
-  date: 2022-11-11
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "10:00"
-  end_time: "12:00"
-  # Where the event will take place
-  location: Graduate Lounge, William G. Davis Building
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/324"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: NA
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: co-working
-
-- key: co-working
-  # Title of event that will show up as the GH Issue title
-  title: "Co-working (UTSG + online)"
-  # Explanation of event as a paragraph form
-  description: "A friendly co-working session. Bring yourself and something to work on!"
-  # Date of the event in YYYY-MM-DD format
-  date: 2022-11-16
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "15:00"
-  end_time: "17:00"
-  # Where the event will take place
-  location: MADLab, Room B112, Gerstein Library
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/325"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: NA
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: co-working
-
-- key: co-working
-  # Title of event that will show up as the GH Issue title
-  title: "Co-working (UTSG + online)"
-  # Explanation of event as a paragraph form
-  description: "A friendly co-working session. Bring yourself and something to work on!"
-  # Date of the event in YYYY-MM-DD format
-  date: 2022-11-30
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "15:00"
-  end_time: "17:00"
-  # Where the event will take place
-  location: MADLab, Room B112, Gerstein Library
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/326"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: NA
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: co-working
-
-  # Key is the part of the filename in _posts/
-- key: co-working
-  # Title of event that will show up as the GH Issue title
-  title: "Co-working (UTM + online)"
-  # Explanation of event as a paragraph form
-  description: "A friendly co-working session. Bring yourself and something to work on!"
-  # Date of the event in YYYY-MM-DD format
-  date: 2022-12-09
-  # Start and end time for event in 24 hour HH:MM format
-  start_time: "10:00"
-  end_time: "12:00"
-  # Where the event will take place
-  location: Graduate Lounge, William G. Davis Building
-  # The URL for the location
-  location_url: "https://github.com/UofTCoders/Events/issues/327"
-  # Packages to install, a space separating each package
-  # (e.g. "dplyr tidyr" or "Pandas>=0.21 Seaborn")
-  packages: ""
-  youtube_link: ""
-  skill_level: Beginner
-  # Beginner Intermediate Advanced
-  # R or Python
-  program_language: NA
-  # Only one label that will be put into the GitHub Issue
-  gh_labels: co-working
