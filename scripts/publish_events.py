@@ -55,7 +55,7 @@ def main(event_dir: pathlib.Path, failure_path: pathlib.Path) -> None:
             event_summary.append(
                 f'- {event["title"]} on {event["date"]} at {event["startTime"]}')
             print(f'Parsed event: {issue.title}')
-            with (event_dir / post_to_filename(event)).open('w', encoding='utf-8') as f:
+            with (event_dir / post_to_filename(event)).open('wb') as f:
                 frontmatter.dump(event, f)
 
     summary = f'Parsed **{len(event_summary)}** issue(s) into event posts:'
