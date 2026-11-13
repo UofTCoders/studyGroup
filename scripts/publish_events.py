@@ -55,7 +55,7 @@ def main(event_dir: pathlib.Path, failure_path: pathlib.Path) -> None:
             event_summary.append(
                 f'- {event["title"]} on {event["date"]} at {event["startTime"]}')
             print(f'Parsed event: {issue.title}')
-            with (event_dir / post_to_filename(event)).open('wb') as f:
+            with (event_dir / post_to_filename(event)).open('w') as f:
                 frontmatter.dump(event, f)
 
     summary = f'Parsed **{len(event_summary)}** issue(s) into event posts:'
@@ -85,12 +85,12 @@ def parse_issue(issue: github.Issue) -> frontmatter.Post:
 
         The description may be multiple lines, but is terminated by the first "metadata"
         tag, which is anything bolded like below (i.e., something that looks like
-        ``**key:**``).
+        ``**key**:``).
 
-        **Where:** Some location.
-        **When:** A date and time acceptable to dateparser.
-        **Instructor:** Unused.
-        **Materials:** Unused.
+        **Where**: Some location.
+        **When**: A date and time acceptable to dateparser.
+        **Instructor**: Unused.
+        **Materials**: Unused.
     """
     body = issue.body
     end_of_description = None
